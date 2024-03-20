@@ -36,6 +36,7 @@ public class ComputerController {
 
     @PostMapping
     public ResponseEntity<Computer> createComputer(@Valid @RequestBody Computer computer) {
+        System.out.println(computer);
         Computer savedComputer = computerService.saveComputer(computer);
         return new ResponseEntity<>(savedComputer, HttpStatus.CREATED);
     }
